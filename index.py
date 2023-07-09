@@ -25,7 +25,7 @@ def run(acc,pwd):
     print("Logining")
     if acc in browser.execute_script("return document.body.innerHTML"):
         browser.execute_script("""document.querySelectorAll(".nav-link")[document.querySelectorAll(".nav-link").length-1].click()""")
-    rp=40
+    rp=20
     while(1):
         if not rp:
             print("Time out")
@@ -36,7 +36,7 @@ def run(acc,pwd):
         rp-=1
     browser.execute_script("""document.querySelector("[name='username']").value="%s";document.querySelector("[name='password']").value="%s";document.querySelector("#button-submit").click()"""%(acc,pwd))
     print("Waiting For Login")
-    rp=40
+    rp=20
     while(1):
         if not rp:
             print("Time out")
@@ -44,8 +44,12 @@ def run(acc,pwd):
         try:
             if "签到" in browser.execute_script("""return document.querySelectorAll(".card-body")[7].innerText"""):
                 break
-        except:
-            pass
+        except: pass
+        try:
+            if "错误" in browser.execute_script("""return document.body.innerText"""):
+                print("%s: Invaild Password\n------------------------------------------"%acc)
+                return
+        except: pass
         time.sleep(0.5)
         rp-=1
     try:
@@ -63,7 +67,7 @@ def run(acc,pwd):
     print("%s OK\n%s\n------------------------------------------"%(acc,b))
     bs.append(b)
 browser = webdriver.Chrome(options=chrome_options,executable_path='./chromedriver')
-print("FZQOJ Auto Sign System By Ariasaka v3.1.2\n------------------------------------------\nStart Processing")
+print("FZQOJ Auto Sign System By Ariasaka v3.2.0\n------------------------------------------\nStart Processing")
 for acc,pwd in accounts.items():
     try:
         print("Task #%d\nRunning %s"%(k,acc))
