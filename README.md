@@ -2,7 +2,9 @@
 
 这个工具可以自动在FZQOJ中签到，需要一个服务器，并设定计划任务。
 
-不过就是python+selenium+javascript罢了（
+~~不过就是python+selenium+javascript罢了（~~
+
+比较轻量化，只需要python环境和requests和pyquery库即可使用。
 
 ## 配置
 
