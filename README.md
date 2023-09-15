@@ -10,7 +10,7 @@
 
 先新建一个 `data.conf` 文件，然后编辑：
 
-每一行输入QOJ用户名+空格+密码（对，明文的！QwQ）
+每一行输入QOJ用户名+空格+QOJ的Token（更改个人信息后显示）
 
 e.g.
 
@@ -25,6 +25,16 @@ tmp123456 123456
 ```
 
 ### 环境
+
+4.0.0：
+
+```
+pip install requests pyquery
+```
+
+即可
+
+### 过时版环境配置
 
 只写了Linux的 QwQ，Windows可以参照一下
 
