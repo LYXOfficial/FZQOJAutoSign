@@ -1,3 +1,7 @@
+# 注意！！！由于FZQOJ已经启动迁移，新的NOJ新增了验证码系统，因此系统不再可用且停更！！！
+
+## 你可以关注FZNOJAutoSign（
+
 # FZQOJ Auto Sign System
 
 这个工具可以自动在FZQOJ中签到，需要一个服务器，并设定计划任务。
